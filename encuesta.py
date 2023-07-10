@@ -20,12 +20,47 @@ st.write('**¿Cuál es tu género?**')
 genero = st.selectbox(label="", options=['Masculino', 'Femenino'], index=0)
 
 st.write('**¿En qué región vives?**')
-region = st.selectbox(label="", options=['Región 1', 'Región 2', 'Región 3'], index=0)
+regiones_peru = ['Amazonas', 'Áncash', 'Apurímac', 'Arequipa', 'Ayacucho', 'Cajamarca', 'Callao',
+                 'Cusco', 'Huancavelica', 'Huánuco', 'Ica', 'Junín', 'La Libertad', 'Lambayeque',
+                 'Lima', 'Loreto', 'Madre de Dios', 'Moquegua', 'Pasco', 'Piura', 'Puno', 'San Martín',
+                 'Tacna', 'Tumbes', 'Ucayali']
 
-st.write('**¿En qué distrito vives?**')
-distrito = st.selectbox(label="",
-                        options=['Distrito 1', 'Distrito 2', 'Distrito 3'],
-                        index=0)
+region = st.selectbox(label="", options=regiones_peru, index=0)
+
+provincias_peru = {
+    'Amazonas': ['Chachapoyas', 'Bagua', 'Bongará', 'Condorcanqui', 'Luya', 'Rodríguez de Mendoza',
+                 'Utcubamba'],
+    'Áncash': ['Huaraz', 'Aija', 'Antonio Raymondi', 'Asunción', 'Bolognesi', 'Carhuaz', 'Carlos Fermín Fitzcarrald',
+               'Casma', 'Corongo', 'Huari', 'Huarmey', 'Huaylas', 'Mariscal Luzuriaga', 'Ocros', 'Pallasca', 'Pomabamba',
+               'Recuay', 'Santa', 'Sihuas', 'Yungay'],
+    'Apurímac': ['Abancay', 'Andahuaylas', 'Antabamba', 'Aymaraes', 'Cotabambas', 'Grau'],
+    'Arequipa': ['Arequipa', 'Camaná', 'Caravelí', 'Castilla', 'Caylloma', 'Condesuyos', 'Islay', 'La Unión'],
+    'Ayacucho': ['Huamanga', 'Cangallo', 'Huanca Sancos', 'Huanta', 'La Mar', 'Lucanas', 'Parinacochas', 'Paucar del Sara Sara',
+                 'Sucre', 'Víctor Fajardo', 'Vilcas Huamán'],
+    'Cajamarca': ['Cajamarca', 'Cajabamba', 'Celendín', 'Chota', 'Contumazá', 'Cutervo', 'Hualgayoc', 'Jaén', 'San Ignacio',
+                  'San Marcos', 'San Miguel', 'San Pablo', 'Santa Cruz'],
+    'Callao': ['Callao'],
+    'Cusco': ['Cusco', 'Acomayo', 'Anta', 'Calca', 'Canas', 'Canchis', 'Chumbivilcas', 'Espinar', 'La Convención', 'Paruro',
+              'Paucartambo', 'Quispicanchi', 'Urubamba'],
+    'Huancavelica': ['Huancavelica', 'Acobamba', 'Angaraes', 'Castrovirreyna', 'Churcampa', 'Huaytará', 'Tayacaja'],
+    'Huánuco': ['Huánuco', 'Ambo', 'Dos de Mayo', 'Huacaybamba', 'Huamalíes', 'Leoncio Prado', 'Marañón', 'Pachitea',
+                'Puerto Inca', 'Lauricocha', 'Yarowilca'],
+    'Ica': ['Ica', 'Chincha', 'Nasca', 'Palpa', 'Pisco'],
+    'Junín': ['Huancayo', 'Concepción', 'Chanchamayo', 'Jauja', 'Junín', 'Satipo', 'Tarma', 'Yauli'],
+    'La Libertad': ['Trujillo', 'Ascope', 'Bolívar', 'Chepén', 'Julcán', 'Otuzco', 'Pacasmayo', 'Pataz', 'Sánchez Carrión',
+                    'Santiago de Chuco', 'Gran Chimú', 'Virú'],
+    'Lambayeque': ['Chiclayo', 'Ferreñafe', 'Lambayeque'],
+    'Lima': ['Lima', 'Barranca', 'Cajatambo', 'Canta', 'Cañete', 'Huaral', 'Huarochirí', 'Huaura', 'Oyón', 'Yauyos'],
+    'Loreto': ['Iquitos', 'Alto Amazonas', 'Loreto', 'Mariscal Ramón Castilla', 'Maynas', 'Requena', 'Ucayali', 'Datem del Marañón',
+               'Putumayo', 'Tigre', 'Yaraví'],
+    'Madre de Dios': ['Tambopata', 'Manu', 'Tahuamanu'],
+    'Moquegua': ['Mariscal Nieto', 'General Sánchez Cerro', 'Ilo'],
+    'Pasco': ['Pasco', 'Daniel Alcides Carrión', 'Oxapampa'],
+    'Piura': ['Piura', 'Ayabaca', 'Huancabamba', 'Morropón', 'Paita', 'Sullana', 'Talara', 'Sechura'],
+    'Puno': ['Puno', 'Azángaro', 'Carabaya', 'Chucuito', 'El Collao', 'Huancané', 'Lampa', 'Melgar', 'Moho', 'San Antonio de Putina',
+             'San Román', 'Sandia', 'Yunguyo'],
+    'San Martín': ['Moyobamba', 'Bellavista', 'El Dorado', 'Huallaga', 'Lamas', 'Mariscal Cáceres', 'Picota', 'Rioja', 'San Martín',
+                   'Tocache']
 
 html_temp = """
 <div style="background-color:#26c5de;padding:0.2 px">
